@@ -1,0 +1,12 @@
+{% extends 'DjangoAplicacion/padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<h1>BORRAR DEPTO</h1>
+<form action="" method="POST">{% csrf_token %}
+    Estas seguro que deseas borrar el departamento de {{departamento.direccion}}?
+    <input type="submit" value="Eliminar">
+</form>
+
+{% endblock contenidoQueCambia %}

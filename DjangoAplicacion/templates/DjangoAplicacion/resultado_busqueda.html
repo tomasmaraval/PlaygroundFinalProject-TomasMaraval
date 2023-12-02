@@ -1,0 +1,12 @@
+{% extends 'DjangoAplicacion/padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<h1>RESULTADOS DE PRECIOS</h1>
+
+{% for propiedad in propiedades %}
+    <p>{{propiedad.direccion}} - Precio: ${{propiedad.precio}}</p>
+{% endfor %}
+
+{% endblock contenidoQueCambia %}

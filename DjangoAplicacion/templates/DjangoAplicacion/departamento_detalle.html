@@ -1,0 +1,18 @@
+{% extends 'DjangoAplicacion/padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<h1>DETALLE DEPTO</h1>
+<p>Direccion: <i>{{departamento.direccion}}</i></p>
+<p>Piso: <i>{{departamento.piso}}</i></p>
+<p>Departamento: <i>{{departamento.departamento}}</i></p>
+<p>Ambientes: <i>{{departamento.ambientes}}</i></p>
+<p>Metros Cuadrados: <i>{{departamento.metros_cuadrados}}</i></p>
+<p>Precio: <i>{{departamento.precio}}</i></p>
+<p>Imagen: <i>{{departamento.imagen}}</i></p>
+<p>
+    <a href="{% url 'ListaDepartamentos' %}">Regresar</a>
+</p>
+
+{% endblock contenidoQueCambia %}

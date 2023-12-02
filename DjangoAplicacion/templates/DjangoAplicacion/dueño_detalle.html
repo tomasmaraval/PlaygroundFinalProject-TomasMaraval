@@ -1,0 +1,15 @@
+{% extends 'DjangoAplicacion/padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<h1>DETALLE DEPTO</h1>
+<p>Nombre: <i>{{dueño.nombre}}</i></p>
+<p>Apellido: <i>{{dueño.apellido}}</i></p>
+<p>Email: <i>{{dueño.email}}</i></p>
+
+<p>
+    <a href="{% url 'ListaDueños' %}">Regresar</a>
+</p>
+
+{% endblock contenidoQueCambia %}

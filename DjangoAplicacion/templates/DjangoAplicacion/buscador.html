@@ -1,0 +1,15 @@
+{% extends 'DjangoAplicacion/padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+<h1>BUSCAR PROPIEDADES</h1>
+<form method="post" action="{% url 'buscar_propiedades' %}">
+    {% csrf_token %}
+    <label for="precio">Precio:</label>
+    <input type="number" name="precio" required>
+    <button type="submit">Buscar</button>
+</form>
+{% if mensaje_error %}
+    <p>{{ mensaje_error }}</p>
+{% endif %}
+{% endblock contenidoQueCambia %}

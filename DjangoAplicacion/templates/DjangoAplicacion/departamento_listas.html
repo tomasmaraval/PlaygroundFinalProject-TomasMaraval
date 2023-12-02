@@ -1,0 +1,27 @@
+{% extends 'DjangoAplicacion/padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<h1>LISTADO DE DEPTOS</h1>
+
+{% for departamento in departamentos %}
+    <h3>@{{departamento.user}}</h3>
+    <li>Departamento: {{departamento.direccion}} {{departamento.imagen}} ${{departamento.precio}}
+        <p>
+            {% if not request.user.is_authenticated or request.user != departamento.user   %}
+            <a href="{% url 'DetalleDepartamento' departamento.pk %}">Detalles</a>
+            {% else %}
+            <a href="{% url 'DetalleDepartamento' departamento.pk %}">Detalles</a>
+            <a href="{% url 'EditarDepartamento' departamento.pk %}">Editar</a>
+            <a href="{% url 'BorrarDepartamento' departamento.pk %}">Borrar</a>
+            {% endif %}
+        </p>
+    </li>
+{% endfor %}
+
+{% if request.user.is_authenticated %}
+<a href="{% url 'CrearDepartamento' %}"> Crear un nuevo Departamento </a>
+{% endif %}
+
+{% endblock contenidoQueCambia %}

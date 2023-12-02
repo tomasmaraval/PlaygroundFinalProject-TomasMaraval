@@ -1,0 +1,16 @@
+{% extends 'DjangoAplicacion/padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<h1>DETALLE DEPTO</h1>
+<p>Direccion: <i>{{casa.direccion}}</i></p>
+<p>Ambientes: <i>{{casa.ambientes}}</i></p>
+<p>Metros Cuadrados: <i>{{casa.metros_cuadrados}}</i></p>
+<p>Precio: <i>{{casa.precio}}</i></p>
+<p>Imagen: <i>{{casa.imagen}}</i></p>
+<p>
+    <a href="{% url 'ListaCasas' %}">Regresar</a>
+</p>
+
+{% endblock contenidoQueCambia %}

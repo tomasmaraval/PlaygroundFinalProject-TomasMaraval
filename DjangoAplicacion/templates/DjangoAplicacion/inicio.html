@@ -1,0 +1,23 @@
+{% extends 'DjangoAplicacion/padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+{% if mensaje %}
+    <p>
+        {{mensaje}}
+    </p>
+{% endif %}
+
+<div class="text-center my-5">
+    {% if not request.user.avatar %}
+    <img class="img-fluid rounded-circle mb-4" src="{% static '5411.jpeg' %}" alt="..." />
+    {% else %}
+    <img src="{{ post.user.avatar.imagen.url }}" alt="" height="40px">
+    {% endif %}
+    <h1 class="text-white fs-3 fw-bolder">5411 ESTATE</h1>
+    <p class="text-white-50 mb-0">VENTA DE VIVIENDAS</p>
+    <p class="text-white-50 mb-0">Somos una gran empresa dedicada a la venta tanto de casas y departamentos.</p>
+</div>
+
+{% endblock contenidoQueCambia %}

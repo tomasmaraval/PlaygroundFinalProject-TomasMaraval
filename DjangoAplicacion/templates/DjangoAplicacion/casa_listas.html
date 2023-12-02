@@ -1,0 +1,27 @@
+{% extends 'DjangoAplicacion/padre.html' %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<h1>LISTADO DE CASAS</h1>
+
+{% for casa in casas %}
+    <h3>@{{casa.user}}</h3>
+    <li>Casa: {{casa.direccion}} {{casa.imagen}} ${{casa.precio}}
+        <p>
+            {% if not request.user.is_authenticated or request.user != casa.user   %}
+            <a href="{% url 'DetalleCasa' casa.pk %}">Detalles</a>
+            {% else %}
+            <a href="{% url 'DetalleCasa' casa.pk %}">Detalles</a>
+            <a href="{% url 'EditarCasa' casa.pk %}">Editar</a>
+            <a href="{% url 'BorrarCasa' casa.pk %}">Borrar</a>
+            {% endif %}
+        </p>
+    </li>
+{% endfor %}
+
+{% if request.user.is_authenticated %}
+<a href="{% url 'CrearCasa' %}"> Crear una nueva Casa </a>
+{% endif %}
+
+{% endblock contenidoQueCambia %}

@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from DjangoAplicacion import models
+
+admin.site.register(models.Departamento)
+admin.site.register(models.Casa)
+admin.site.register(models.Dueño)
+admin.site.register(models.Avatar)
