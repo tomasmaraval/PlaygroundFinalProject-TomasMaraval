@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from typing import Any
 from django.db import models
 from django.contrib.auth.models import User
@@ -48,3 +49,27 @@ class Usuario (models.Model):
 
     def __str__(self) -> str:
         return f'Usuario: @{self.user}'
+=======
+from django.db import models
+
+# Create your models here.
+class Curso (models.Model):
+    curso = models.CharField(max_length=40)
+    camada = models.IntegerField()
+
+class Profesor (models.Model):
+    nombre = models.CharField(max_length=30)
+    apellido = models.CharField(max_length=30)
+    email = models.EmailField()
+    profesion = models.CharField(max_length=30)
+
+class Estudiante (models.Model):
+    nombre = models.CharField(max_length=30)
+    apellido = models.CharField(max_length=30)
+    email = models.EmailField()
+
+class Entregable (models.Model):
+    nombre = models.CharField(max_length=30)
+    fecha_entrega = models.DateField()
+    entregado = models.BooleanField()
+>>>>>>> origin/main

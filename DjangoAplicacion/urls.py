@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.urls import path
 from DjangoAplicacion.views import *
+<<<<<<< HEAD
 from django.contrib.auth.views import LogoutView
 from django.conf import settings
 from django.conf.urls.static import static
@@ -41,3 +42,14 @@ urlpatterns = [
     path('cambiarContraseña', CambiarContraseña.as_view(), name='cambiarContraseña'),
 ] 
 urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+=======
+
+urlpatterns = [
+    path('', inicio, name='inicio'),
+    path('cursos/', cursos, name='cursos'),
+    path('profesores/', profesores, name='profes'),
+    path('estudiantes/', estudiantes, name='alumnos'),
+    path('entregables/', entregables, name='entregables'),
+    path('buscar/', buscar, name='buscar'),
+]
+>>>>>>> origin/main

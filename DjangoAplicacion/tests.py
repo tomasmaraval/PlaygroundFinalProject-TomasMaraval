@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.test import TestCase, Client
 from django.urls import reverse
 from django.contrib.auth.models import User
@@ -14,3 +15,8 @@ class RegistrarTestCase(TestCase):
         self.assertEqual(respuesta.status_code, 200)
         self.assertTemplateUsed(respuesta, 'leer_profesores.html')
         self.assertQuerysetEqual(Profesor.objects.all(), [])
+=======
+from django.test import TestCase
+
+# Create your tests here.
+>>>>>>> origin/main
